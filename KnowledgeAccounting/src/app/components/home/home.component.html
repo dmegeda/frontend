@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <h1 class="text-center pt-3">Latest tests</h1>
+  <div *ngIf="!loaded" class="loading-container">
+    <mat-progress-spinner
+    class="progress-spinner"
+    mode="indeterminate"
+    [color]="warn">
+  </mat-progress-spinner>
+  <p>Loading...</p>
+  </div>
+  <div *ngIf="loaded">
+    <div class="single-item" *ngFor="let test of tests">
+      <p class="title">{{test.title}}</p>
+        <p class="right-title">{{test.startDate | date: "dd/MM/yyyy"}}
+          - {{test.deadline | date: "dd/MM/yyyy"}}
+        </p>
+        <p>{{test.description}}</p>
+        <a routerLink="/test/{{test.id}}">
+          <button mat-button (click)="ngOnInit">Details</button>
+        </a>
+    </div>
+  </div>
+</div>

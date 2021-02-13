@@ -1,0 +1,21 @@
+<div class="container-fluid  d-flex align-items-center justify-content-center">
+  <form [formGroup]="registerFormModel" class="
+    auth-form
+    form-group
+    d-flex
+    flex-column
+    align-items-center
+    w-75"
+    (ngSubmit)="onSubmit()" novalidate>
+    <h1 class="m-0">SignUp Form</h1>
+    <input class="form-control" mat-input name="name" formControlName="userName" placeholder="Username">
+    <input class="form-control" mat-input type="password" name="password"
+      formControlName="password" placeholder="Password">
+    <input class="form-control" mat-input type="password" name="confirm password"
+      formControlName="confirmPassword" placeholder="Confirm password">
+    <p class="alert alert-danger" *ngIf="ErrorMessage !== ''">{{ErrorMessage}}</p>
+    <button mat-raised-button mat-button type="submit">
+      Sign Up
+    </button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <h1 class="text-center pt-3">Your statistics</h1>
+    <table class="table">
+      <tr>
+        <th>Test name</th>
+        <th>Status</th>
+        <th>Score</th>
+      </tr>
+      <tr *ngFor="let stat of statistics">
+        <td>{{getTestName(stat.testId)}}</td>
+        <td>{{getIsPassedString(stat.isPassed)}}</td>
+        <td>{{roundNumber(stat.userRating, 2)}}</td>
+      </tr>
+    </table>
+</div>

@@ -1,0 +1,18 @@
+.container-fluid {
+  max-width: 50em;
+  min-height: 50vh;
+  margin-top: 8vh;
+  margin-bottom: 26.8vh;
+}
+
+.auth-form * {
+  margin-top: 2em;
+}
+
+.form-control {
+  max-width: 20em;
+}
+
+.mat-input-invalid {
+  background-color: red;
+}

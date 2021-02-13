@@ -1,0 +1,32 @@
+.navbar {
+  background-color: #255bce;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-weight: 900;
+  word-wrap: break-word;
+}
+
+a {
+  color: #f1f1f193;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-link {
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.user-greeting p {
+  font-size: 20px;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.user-greeting p:hover {
+  color: #d3d3d3;
+}

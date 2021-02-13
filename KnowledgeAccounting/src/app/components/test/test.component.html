@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <h2 *ngIf="loaded" class="text-center pt-3">{{test.title}}</h2>
+  <div *ngIf="loaded" class="test-info">
+    <p>Description: {{test.description}}</p>
+    <p>Max rate: {{test.maxRate}}</p>
+    <p>Min pass rate: {{test.minRatingForPass}}</p>
+    <p>Start date: {{ convertDateToLocale(test.startDate)}}</p>
+    <button *ngIf="!isTesting" mat-button color="primary" (click)="goTesting()">GO!</button>
+  </div>
+  <div *ngIf="isTesting">
+    <div *ngFor="let question of test.questions">
+      {{question.text}}
+      <div *ngFor="let answer of question.answers">
+        <input type="radio" name="{{question.text}}" [value]="answer.text" id="{{answer.id}} ngModel">
+        <label for="{{answer.id}}">{{answer.text}}</label>
+      </div>
+    </div>
+    <button mat-button (click)="finishTest()">Finish</button>
+  </div>
+</div>
