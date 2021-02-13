@@ -117,6 +117,10 @@
               "devServerTarget": "KnowledgeAccSys-Client:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
