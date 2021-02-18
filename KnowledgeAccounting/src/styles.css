@@ -34,6 +34,7 @@ input.ng-invalid.ng-touched {
 }
 
 .single-item {
+  float: left;
   width: 100%;
   box-shadow: 0 0 5px #dddddd;
   border-radius: 5px;

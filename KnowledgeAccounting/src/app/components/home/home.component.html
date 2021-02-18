@@ -8,7 +8,7 @@
   </mat-progress-spinner>
   <p>Loading...</p>
   </div>
-  <div *ngIf="loaded">
+  <div class="tests-container" *ngIf="loaded">
     <div class="single-item" *ngFor="let test of tests">
       <p class="title">{{test.title}}</p>
         <p class="right-title">{{test.startDate | date: "dd/MM/yyyy"}}

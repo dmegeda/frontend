@@ -17,7 +17,9 @@ constructor(private http: HttpClient) { }
     return tests;
   }
 
-  getTest(id: number): Observable<Test> {
-    return this.http.get<Test>(this.url + '/' + id);
+  getTest(id: number): Test {
+    console.log(tests);
+    console.log(tests[id + 1]);
+    return tests[id - 1];
   }
 }

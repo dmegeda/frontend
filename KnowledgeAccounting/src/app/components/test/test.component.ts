@@ -32,25 +32,17 @@ export class TestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.testService.getTest(this.id).subscribe((data) => {
-      if (data !== null) {
-        this.test = data;
-        this.loaded = true;
-        this.statistic.test_Id = data.id;
-      }
-      else {
-        this.route.navigateByUrl('/home');
-      }
-    });
+    this.test = this.testService.getTest(this.id);
+    if (this.test != null) {
+      this.loaded = true;
+    }
+    else {
+      this.route.navigateByUrl('/home');
+    }
   }
 
   goTesting(): void{
-    if (localStorage.getItem('token') == null) {
-      this.route.navigateByUrl('/login');
-    }
-    else {
-      this.isTesting = true;
-    }
+    this.route.navigateByUrl('/home');
   }
 
   finishTest(): void{
@@ -68,7 +60,7 @@ export class TestComponent implements OnInit {
   getCorrectAnswersCount(): number{
     let correctAnsw = 0;
     for (const question of this.test.questions) {
-      const radios = document.getElementsByTagName("input");
+      const radios = document.getElementsByTagName('input');
       for (let i = 0; i < radios.length; i++){
         if (radios[i].type === 'radio'
           && radios[i].name === `${question.text}`
