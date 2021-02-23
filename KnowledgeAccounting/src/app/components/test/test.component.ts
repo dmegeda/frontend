@@ -21,28 +21,37 @@ export class TestComponent implements OnInit {
   statistic = {} as Statistic;
 
   constructor(private testService: TestService, private userService: UserService, private statService: StatisticService,
-              activeRoute: ActivatedRoute, private route: Router) {
-      const id_parsed = Number.parseInt(activeRoute.snapshot.params["id"]);
-      if (isFinite(id_parsed)) {
-        this.id = id_parsed;
-      }
-      else {
-        this.route.navigateByUrl('/home');
-      }
-  }
-
-  ngOnInit(): void {
-    this.test = this.testService.getTest(this.id);
-    if (this.test != null) {
-      this.loaded = true;
+    activeRoute: ActivatedRoute, private route: Router) {
+    const id_parsed = Number.parseInt(activeRoute.snapshot.params["id"]);
+    if (isFinite(id_parsed)) {
+      this.id = id_parsed;
     }
     else {
       this.route.navigateByUrl('/home');
     }
   }
 
+  ngOnInit(): void {
+    this.testService.getTest(this.id).subscribe((data) => {
+      if (data !== null) {
+        this.test = data;
+        this.loaded = true;
+        this.statistic.test_Id = data.id;
+      }
+      else {
+        this.route.navigateByUrl('/home');
+      }
+    });
+  }
+
   goTesting(): void{
-    this.route.navigateByUrl('/home');
+    if (localStorage.getItem('token') == null) {
+      this.route.navigateByUrl('/login');
+    }
+    else {
+      this.isTesting = true;
+      console.log(this.test);
+    }
   }
 
   finishTest(): void{

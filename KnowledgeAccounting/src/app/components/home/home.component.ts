@@ -12,12 +12,14 @@ export class HomeComponent implements OnInit {
 
   constructor(private testService: TestService) { }
 
-  loaded: boolean = false;
+  loaded = false;
   tests: Test[] = [];
 
   ngOnInit(): void {
-    this.tests = this.testService.getTests();
-    this.loaded = true;
+    this.testService.getTests().subscribe((data) => {
+      this.tests = data;
+      this.loaded = true;
+    });
   }
 
 }

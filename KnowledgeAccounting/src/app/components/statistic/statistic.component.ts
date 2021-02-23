@@ -30,7 +30,9 @@ export class StatisticComponent implements OnInit {
       this.service.getUserStatistic(user_id).subscribe((data) => {
         this.statistics = data;
       });
-      this.tests = this.testService.getTests();
+      this.testService.getTests().subscribe((data) => {
+        this.tests = data;
+      });
     }
   }
 

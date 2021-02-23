@@ -3,7 +3,6 @@ import { Test } from './../../interfaces/test';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tests } from './../../constant_data/tests';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +12,12 @@ export class TestService {
 constructor(private http: HttpClient) { }
 
   private url = 'https://localhost:44366/api/tests';
-  getTests(): Test[]{
-    return tests;
+
+  getTests(): Observable<Test[]>{
+    return this.http.get<Test[]>(this.url);
   }
 
-  getTest(id: number): Test {
-    console.log(tests);
-    console.log(tests[id + 1]);
-    return tests[id - 1];
+  getTest(id: number): Observable<Test> {
+    return this.http.get<Test>(this.url + '/' + id);
   }
 }
