@@ -6,10 +6,6 @@
     <p>Min pass rate: {{test.minRatingForPass}}</p>
     <p>Start date: {{ convertDateToLocale(test.startDate)}}</p>
     <button *ngIf="!isTesting" mat-button color="primary" (click)="goTesting()">GO!</button>
-    <mat-radio-group>
-      <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
-      <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
-    </mat-radio-group>
   </div>
   <div *ngIf="isTesting">
     <div *ngFor="let question of test.questions">
