@@ -11,10 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnowledgeAccSys.BLL", "..\K
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnowledgeAccSys.Tests", "..\KnowledgeAccSys.Tests\KnowledgeAccSys.Tests.csproj", "{C8168B28-D89B-4428-B928-C9F07ABDA2AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth", "..\Auth\Auth.csproj", "{DA7B1B1A-7ECC-4CBE-BD3D-49651833DBF1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knowledge.Tests", "..\Knowledge.Tests\Knowledge.Tests.csproj", "{10E5E293-A76A-4CA1-B8F6-CC512FAECCF8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,14 +33,6 @@ Global
 		{C8168B28-D89B-4428-B928-C9F07ABDA2AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8168B28-D89B-4428-B928-C9F07ABDA2AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8168B28-D89B-4428-B928-C9F07ABDA2AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA7B1B1A-7ECC-4CBE-BD3D-49651833DBF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA7B1B1A-7ECC-4CBE-BD3D-49651833DBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA7B1B1A-7ECC-4CBE-BD3D-49651833DBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA7B1B1A-7ECC-4CBE-BD3D-49651833DBF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10E5E293-A76A-4CA1-B8F6-CC512FAECCF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10E5E293-A76A-4CA1-B8F6-CC512FAECCF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10E5E293-A76A-4CA1-B8F6-CC512FAECCF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10E5E293-A76A-4CA1-B8F6-CC512FAECCF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
