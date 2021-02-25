@@ -54,7 +54,7 @@ export const appRoutes: Routes = [
     MatRadioModule,
     MatTooltipModule,
     BrowserAnimationsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

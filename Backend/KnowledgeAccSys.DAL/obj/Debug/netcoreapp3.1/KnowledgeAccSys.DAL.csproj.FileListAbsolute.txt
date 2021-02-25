@@ -1,0 +1,12 @@
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.deps.json
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.runtimeconfig.json
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.runtimeconfig.dev.json
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.dll
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.pdb
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.AssemblyInfoInputs.cache
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.AssemblyInfo.cs
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.csproj.CoreCompileInputs.cache
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.dll
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.pdb
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.genruntimeconfig.cache
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.DAL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.csprojAssemblyReference.cache

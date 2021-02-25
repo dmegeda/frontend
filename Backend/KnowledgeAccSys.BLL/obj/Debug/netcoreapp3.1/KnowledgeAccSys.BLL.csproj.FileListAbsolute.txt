@@ -1,0 +1,15 @@
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.deps.json
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.runtimeconfig.json
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.runtimeconfig.dev.json
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.dll
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.pdb
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.dll
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\bin\Debug\netcoreapp3.1\KnowledgeAccSys.DAL.pdb
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.csprojAssemblyReference.cache
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.AssemblyInfoInputs.cache
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.AssemblyInfo.cs
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.csproj.CoreCompileInputs.cache
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.csproj.CopyComplete
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.dll
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.pdb
+D:\C#\KnowledgeAccountingSystem\knowledgeaccountingsystem\KnowledgeAccSys.BLL\obj\Debug\netcoreapp3.1\KnowledgeAccSys.BLL.genruntimeconfig.cache
