@@ -1,0 +1,21 @@
+#test-container {
+    flex-direction: column;
+    padding: 10px;
+}
+
+#test-container * {
+    margin: 10px;
+}
+
+label {
+    margin-left: 5px;
+}
+
+.radios-group {
+    display: flex;
+    flex-direction: column;
+}
+
+:host ::ng-deep .mat-radio-outer-circle {
+    visibility: hidden;
+}
