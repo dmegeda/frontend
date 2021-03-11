@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import '../Auth.scoped.css';
 
 export default class RegistrationComponent extends Component{
-    constructor(props) {
-        super(props)
-    }
 
     render() {
 
