@@ -16,21 +16,21 @@
           <label v-bind:for="answer.id">{{answer.text}}</label>
         </div>
       </div>
-      <button class="btn">Finish</button>
+      <button class="btn" v-on:click="finishTesting()">Finish</button>
     </div>
   </div>
 </template>
 
 <script>
 
-import { tests } from '../Constants/tests'
+import { tests } from '../constants/tests';
+import { statistics } from '../constants/statistics'
 
 export default {
 
   data () {
 
     const id_parsed = Number.parseInt(this.$route.params.id);
-    console.log(id_parsed);
     const test = tests.find(x => x.id === id_parsed);
 
     return {
@@ -42,6 +42,57 @@ export default {
   methods: {
     goTesting() {
       this.isTesting = true;
+    },
+
+    finishTesting() {
+      const correctCount = this.getCorrectAnswersCount();
+      const test = this.test;
+      const correctPercent = this.getCorrectAnswersPercent(correctCount, test.questions.length);
+      let isPassed = false;
+
+      if (correctPercent >= test.minRatingForPass) {
+        isPassed = true;
+      }
+
+      const stat = {
+        testName: test.title,
+        isPassed: isPassed,
+        score: correctPercent
+      };
+
+      statistics.push(stat);
+      localStorage.setItem("statistics", JSON.stringify(statistics));
+
+      this.isTesting = false;
+      this.$router.push('/statistic');
+    },
+
+    getCorrectAnswersCount(){
+      let correctAnsw = 0;
+      for (const question of this.test.questions) {
+        const radios = document.getElementsByTagName('input');
+        for (let i = 0; i < radios.length; i++){
+          if (radios[i].type === 'radio'
+            && radios[i].name === `${question.text}`
+            && radios[i].checked === true) {
+            const title = radios[i].value;
+              if (this.checkAnswerIsCorrect(title, question)) {
+                  correctAnsw++;
+              }
+          }
+        }
+      }
+
+      return correctAnsw;
+    },
+
+    getCorrectAnswersPercent(correctCount, answerCount) {
+      return (correctCount / answerCount) * 100;
+    },
+
+    checkAnswerIsCorrect(answerText, question) {
+      const answer = question.answers.find(x => x.text === answerText);
+      return answer.id === question.correctAnswerId;
     }
   }
 

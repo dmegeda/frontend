@@ -13,7 +13,7 @@
                 <a class="nav-link" href="/register">Sign Up</a>
             </li>
             <li v-if=true class="nav-item">
-                <a class="nav-link" hrefk="/login">Sign In</a>
+                <a class="nav-link" href="/login">Sign In</a>
             </li>
             <li v-if=true class="nav-item">
                 <a id="logout-link" class="nav-link" href="/">Sign Out</a>
