@@ -1,9 +1,25 @@
 version: '3'
 services:
-  frontend:
+  frontend_angular:
     build:
       context: ./KnowledgeAccounting
       dockerfile: Dockerfile
-    container_name: frontend
+    container_name: frontend_angular
     ports:
-      - "8000:4200"
+      - "4200:4200"
+  frontend_react:
+    build:
+      context: ./ReactFrontend/knowledge-accounting
+      dockerfile: Dockerfile
+    container_name: frontend_react
+    ports:
+      - "3000:3000"
+  frontend_vue:
+    environment:
+      - HOST=0.0.0.0
+    build:
+      context: ./VueFrontend/knowledge-accounting-vue
+      dockerfile: Dockerfile
+    container_name: frontend_vue
+    ports:
+      - "8000:8080"
