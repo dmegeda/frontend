@@ -1,0 +1,49 @@
+h1 {
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0;
+}
+
+#details-link {
+    color: #000000;
+    text-decoration: none;
+}
+
+.tests-container {
+    display: inline-grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.test-item {
+    width: 100%;
+    box-shadow: 0 0 5px #dddddd;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+.title {
+    font-weight: 600;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10%;
+}
+
+:host ::ng-deep .progress-spinner circle {
+    stroke: #255bce;
+}
+
+.single-item * {
+    margin: 5px;
+}
+
+#details-btn {
+    margin-top: 10px;
+}
