@@ -1,0 +1,4 @@
+export const ActionTypes = {
+    SET_STATISTICS_LIST: "SET_STATISTICS_LIST",
+    ADD_STATISTIC: "ADD_STATISTIC"
+}

@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import './homeComponent.css';
-import { tests } from '../../constants/tests';
-import TestsList from '../../redux/containers/tests-list';
+import TestsList from '../../redux/containers/test-list';
 
 export default class HomeComponent extends Component{
-    constructor(props) {
-        super(props)
-        this.state = {
-            tests: tests
-        }
-    }
 
     render() {
 

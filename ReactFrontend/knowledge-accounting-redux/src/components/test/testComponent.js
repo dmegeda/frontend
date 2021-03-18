@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import * as moment from 'moment';
-import './testComponent.scoped.css';
+import './testComponent.css';
 import { tests } from '../../constants/tests';
 import { statistics } from '../../constants/statistics';
+import TestDetails from '../../redux/containers/test-details';
+
 
 export default class TestComponent extends Component{
     constructor(props) {
@@ -79,8 +80,6 @@ export default class TestComponent extends Component{
     }
 
     getCorrectAnswersPercent(correctCount, answerCount) {
-        console.log(answerCount);
-        console.log(correctCount);
         return (correctCount / answerCount) * 100;
     }
     
@@ -90,32 +89,9 @@ export default class TestComponent extends Component{
     }
 
     render() {
-        const id = this.props.match.params.id;
-        const test = tests.find(x => x.id == id);
-        //this.state.test = test;
-        console.log(statistics);
-        const questions = this.state.test.questions.map((question) => <div key={question.id} className="single-item">
-            <p id="test-title" className="title">{question.text}</p>
-            {question.answers.map((answer) => <div key={answer.id}>
-                <input type="radio" name={`${question.text}`} value={`${answer.text}`} id={`${answer.id}`}></input>
-                <label htmlFor={`${answer.id}`}>{answer.text}</label>
-            </div>)}
-        </div>);
-
-        const testing = <div>{questions}<button className="btn" onClick={this.finishBtnClick}>Finish!</button>
-        </div>
-
         return (
             <div id="test-container" className="container-fluid d-flex">
-                <h2 className="text-center pt-3">{test.title}</h2>
-                <div className="test-info">
-                    <p>Description: {test.description}</p>
-                    <p>Max rate: {test.maxRate}</p>
-                    <p>Min pass rate: {test.minRatingForPass}</p>
-                    <p>Start date: { moment(test.startDate).format("DD/MM/yyyy")}</p>
-                    <button className="btn" onClick={this.goTestingBtnClick}>GO!</button>
-                </div>
-                {this.state.isTesting && testing}
+                <TestDetails id={this.props.match.params.id} />
             </div>
         );
     }
