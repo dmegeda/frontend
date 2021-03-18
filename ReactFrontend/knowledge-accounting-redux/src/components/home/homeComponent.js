@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import './HomeComponent.css';
-import { tests } from '../../Constants/tests';
-import TestsList from '../../Redux/containers/tests-list';
+import './homeComponent.css';
+import { tests } from '../../constants/tests';
+import TestsList from '../../redux/containers/tests-list';
 
 export default class HomeComponent extends Component{
     constructor(props) {

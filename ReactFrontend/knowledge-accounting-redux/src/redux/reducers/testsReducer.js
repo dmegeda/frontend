@@ -1,4 +1,4 @@
-import { tests } from '../../Constants/tests';
+import { tests } from '../../constants/tests';
 
 export default function () {
     return tests;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './HeaderComponent.css';
+import './headerComponent.css';
 
 export default class HeaderComponent extends Component {
     render() {

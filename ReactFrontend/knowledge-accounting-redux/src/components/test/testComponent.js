@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import * as moment from 'moment';
-import './TestComponent.scoped.css';
-import { tests } from '../../Constants/tests';
-import { statistics } from '../../Constants/statistics';
+import './testComponent.scoped.css';
+import { tests } from '../../constants/tests';
+import { statistics } from '../../constants/statistics';
 
 export default class TestComponent extends Component{
     constructor(props) {

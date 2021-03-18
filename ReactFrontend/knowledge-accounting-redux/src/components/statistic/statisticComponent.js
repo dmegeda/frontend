@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './StatisticComponent.css';
+import './statisticComponent.css';
 
 export default class StatisticComponent extends Component{
     constructor(props) {

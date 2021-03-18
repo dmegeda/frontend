@@ -6,15 +6,15 @@ import { Provider } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-import FooterComponent from './Components/Shared/Footer/FooterComponent';
-import HeaderComponent from './Components/Shared/Header/HeaderComponent';
-import HomeComponent from './Components/Home/HomeComponent';
-import TestComponent from './Components/Test/TestComponent';
-import LoginComponent from './Components/Auth/Login/LoginComponent';
-import RegistrationComponent from './Components/Auth/Registration/RegistrationComponent';
-import StatisticComponent from './Components/Statistic/StatisticComponent';
+import FooterComponent from './components/shared/footer/footerComponent';
+import HeaderComponent from './components/shared/header/headerComponent';
+import HomeComponent from './components/home/homeComponent';
+import TestComponent from './components/test/testComponent';
+import LoginComponent from './components/auth/login/loginComponent';
+import RegistrationComponent from './components/auth/registration/registrationComponent';
+import StatisticComponent from './components/statistic/statisticComponent';
 
-import { store } from './Redux/Store/index';
+import { store } from './redux/store/index';
 
 ReactDOM.render(
   <Provider store={store}>

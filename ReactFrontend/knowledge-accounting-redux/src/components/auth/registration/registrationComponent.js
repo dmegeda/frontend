@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../Auth.scoped.css';
+import '../auth.scoped.css';
 
 export default class RegistrationComponent extends Component{
 
