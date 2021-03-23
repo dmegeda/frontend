@@ -69,6 +69,7 @@ namespace KnowledgeAccSys.DAL.Repositories
 
         public void Update(TEntity item)
         {
+            _dbSet.Attach(item);
             ((DbContext)_context).Entry(item).State = EntityState.Modified;
         }
     }

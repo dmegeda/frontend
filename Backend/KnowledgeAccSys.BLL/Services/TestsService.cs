@@ -96,7 +96,8 @@ namespace KnowledgeAccSys.BLL.Services
             if(item != null)
             {
                 var mapper = GetMapperToEntity();
-                db.Tests.Update(mapper.Map<TestDTO, Test>(item));
+                Test originalTest = db.Tests.GetById(item.Id);
+                db.Tests.Update(mapper.Map(item, originalTest));
                 db.Save();
             } 
         }
@@ -105,8 +106,11 @@ namespace KnowledgeAccSys.BLL.Services
         {
             return new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<TestDTO, Test>();
-                cfg.CreateMap<ThemeDTO, Theme>();
+                cfg.CreateMap<TestDTO, Test>()
+                .ForMember(x => x.Theme, cfg => cfg.MapFrom(x => db.Themes.GetById(x.Theme_Id)))
+                .ForMember(x => x.Questions, cfg => cfg.MapFrom(x => 
+                    db.Questions.Find(question => question.Tests.Contains(db.Tests.GetById(x.Id)))));
+
                 cfg.CreateMap<TestQuestionDTO, TestQuestion>();
                 cfg.CreateMap<AnswerDTO, Answer>();
             }).CreateMapper();

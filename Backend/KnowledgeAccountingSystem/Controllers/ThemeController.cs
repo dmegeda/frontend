@@ -62,7 +62,7 @@ namespace KnowledgeAccountingSystem.Controllers
                 theme.Title = themeModel.Title;
                 _themeService.Update(theme);
 
-                return Ok();
+                return Ok("Success!");
             }
 
             return BadRequest("Theme not found!");
@@ -78,10 +78,12 @@ namespace KnowledgeAccountingSystem.Controllers
 
                 if (theme != null)
                 {
+                    if (theme.IsDeleted) return BadRequest("Theme already deleted!");
+
                     theme.IsDeleted = true;
                     _themeService.Update(theme);
 
-                    return Ok();
+                    return Ok("Success!");
                 }
 
                 return BadRequest("Theme not found!");
@@ -102,7 +104,7 @@ namespace KnowledgeAccountingSystem.Controllers
                 {
                     await _themeService.DeleteAsync(theme.Id);
 
-                    return Ok();
+                    return Ok("Success!");
                 }
 
                 return BadRequest("Theme not found!");

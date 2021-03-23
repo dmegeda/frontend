@@ -55,6 +55,7 @@ namespace KnowledgeAccountingSystem.Controllers
                 ReportModel model = mapper.Map<ReportDTO, ReportModel>(report);
 
                 await reportService.AddAsync(report);
+
                 return Ok(new { model });
             }
             return BadRequest("Wrong id!");

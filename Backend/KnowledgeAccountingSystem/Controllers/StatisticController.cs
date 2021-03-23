@@ -38,16 +38,10 @@ namespace KnowledgeAccountingSystem.Controllers
             if (model != null && model.CorrectAnswersCount >= 0 && model.User_Id != string.Empty)
             {
                 var user = await _userManager.FindByIdAsync(model.User_Id);
-                if(user == null)
-                {
-                    return BadRequest("User not found!");
-                }
+                if(user == null) return BadRequest("User not found!");
 
                 var test = await testService.GetByIdAsync(model.Test_Id);
-                if(test == null)
-                {
-                    return BadRequest("Test not found!");
-                }
+                if(test == null) return BadRequest("Test not found!");
 
                 double userRating = await statsService.CalculateUserRating(model.CorrectAnswersCount, 
                     test.Id);
@@ -62,7 +56,8 @@ namespace KnowledgeAccountingSystem.Controllers
                 };
 
                 await statsService.AddAsync(statistic);
-                return Ok();
+
+                return Ok("Success!");
             }
 
             return BadRequest("Invalid data!");
@@ -75,7 +70,10 @@ namespace KnowledgeAccountingSystem.Controllers
             var user = await _userManager.FindByIdAsync(user_id);
             if (user != null)
             {
-                return Ok(statsService.Find(x => x.UserId == user.Id));
+                IEnumerable<StatisticDTO> statistics = statsService.Find(x => x.UserId == user.Id);
+
+                if (statistics.Any()) return Ok(statistics);
+                return BadRequest("Statistics not found or empty"); 
             }
             return BadRequest("User not found!");
         }

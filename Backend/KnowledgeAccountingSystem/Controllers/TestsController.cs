@@ -6,6 +6,7 @@ using KnowledgeAccSys.BLL.Services;
 using Microsoft.AspNetCore.Mvc;
 using Ninject;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace KnowledgeAccountingSystem.Controllers
@@ -37,6 +38,18 @@ namespace KnowledgeAccountingSystem.Controllers
             return await _testsService.GetAllAsync(true);
         }
 
+        [HttpGet]
+        [Route("all")]
+        public async Task<IEnumerable<TestDTO>> GetAll()
+        {
+            IEnumerable<TestDTO> testsDeleted = await _testsService.GetAllAsync(true);
+            IEnumerable<TestDTO> testsNonDeleted = await _testsService.GetAllAsync();
+            List<TestDTO> allTests = testsDeleted.ToList();
+            allTests.AddRange(testsNonDeleted.ToList());
+
+            return allTests;
+        }
+
         // GET api/<TestController>/5
         [HttpGet("{test_id}")]
         public async Task<IActionResult> GetById(string test_id)
@@ -63,7 +76,7 @@ namespace KnowledgeAccountingSystem.Controllers
                 test.Title = testModel.Title;
                 _testsService.Update(test);
 
-                return Ok();
+                return Ok("Success!");
             }
 
             return BadRequest("Test not found!");
@@ -75,14 +88,16 @@ namespace KnowledgeAccountingSystem.Controllers
         {
             if (int.TryParse(test_id, out int test_id_parsed))
             {
-                TestDTO theme = await _testsService.GetByIdAsync(test_id_parsed);
+                TestDTO test = await _testsService.GetByIdAsync(test_id_parsed);
 
-                if (theme != null)
+                if (test != null)
                 {
-                    theme.IsDeleted = true;
-                    _testsService.Update(theme);
+                    if (test.IsDeleted) return BadRequest("Test already deleted!");
 
-                    return Ok();
+                    test.IsDeleted = true;
+                    _testsService.Update(test);
+
+                    return Ok("Success!");
                 }
 
                 return BadRequest("Test not found!");
@@ -103,7 +118,7 @@ namespace KnowledgeAccountingSystem.Controllers
                 {
                     await _testsService.DeleteAsync(test.Id);
 
-                    return Ok();
+                    return Ok("Success!");
                 }
 
                 return BadRequest("Test not found!");

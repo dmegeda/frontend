@@ -42,9 +42,11 @@ namespace KnowledgeAccountingSystem.Controllers
 
             var pwd_validator = new PasswordValidator<IdentityUser>();
             var pwd_result = await pwd_validator.ValidateAsync(_userManager, user, model.Password);
+
             if (!pwd_result.Succeeded) return BadRequest("Password is invalid!");
 
             var create_result = await _userManager.CreateAsync(user, model.Password);
+
             if (create_result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(user, model.Role);
@@ -62,11 +64,11 @@ namespace KnowledgeAccountingSystem.Controllers
             var user = await _userManager.FindByNameAsync(model.UserName);
 
             if(user == null) return BadRequest("Incorrect username!");
-            if(!await _userManager.CheckPasswordAsync(user, model.Password)) return BadRequest("Incorrect password!");
+            if(!await _userManager.CheckPasswordAsync(user, model.Password)) 
+                return BadRequest("Incorrect password!");
 
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
-            {
-                
+            {       
                 var role = await _userManager.GetRolesAsync(user);
                 IdentityOptions _options = new IdentityOptions();
                 var tokenKey = Encoding.UTF8.GetBytes("cexshh722yDQM7jdGMCswk9Ng");
@@ -86,6 +88,7 @@ namespace KnowledgeAccountingSystem.Controllers
                 var tokenHandler = new JwtSecurityTokenHandler();
                 var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                 var token = tokenHandler.WriteToken(securityToken);
+
                 return Ok(new { Token = token });
             }
 
